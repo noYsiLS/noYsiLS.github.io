@@ -3,95 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>noYsiLS — Presentación</title>
+  <title>Presentación</title>
 
-  <!-- Estilos base de reveal.js (CDN) -->
+  <!-- Estilos de Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/monokai.css">
 
   <style>
-    .brand { font-size: 42px; letter-spacing: .5px; margin-bottom: .2em; }
-    .links a { margin: 0 8px; font-weight: 600; }
+    .brand { font-size: 64px; letter-spacing: 1px; margin-bottom: .3em; }
+    .subtitle { font-size: 28px; margin-top: .5em; }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Portada -->
+      <!-- Presentación única -->
       <section data-background-color="#111">
         <h1 class="brand">noYsiLS</h1>
-        <p>Desarrollador • Estudiante • Proyectos</p>
-        <p class="links">
-          <a href="https://github.com/noYsiLS" target="_blank">GitHub</a> ·
-          <a href="mailto:tu@email.com">Contacto</a>
+        <p class="subtitle">Bienvenido a mi página en GitHub Pages 🚀</p>
+        <p>
+          <a href="https://github.com/noYsiLS" target="_blank">Visita mi GitHub</a>
         </p>
-        <small>Usa ← → para navegar</small>
-      </section>
-
-      <!-- Sobre mí -->
-      <section>
-        <h2>Quién soy</h2>
-        <ul>
-          <li>Apasionado de Java, web y juegos.</li>
-          <li>Trabajando con libGDX, Laravel, Angular.</li>
-          <li>De México 🇲🇽, aprendiendo cada día.</li>
-        </ul>
-      </section>
-
-      <!-- Proyectos (vertical stack) -->
-      <section>
-        <section>
-          <h2>Proyectos</h2>
-          <p>Algunos destacados.</p>
-        </section>
-        <section>
-          <h3>Juego Arcade (libGDX)</h3>
-          <p>Recolectar y esquivar al estilo retro.</p>
-          <p><a href="https://github.com/noYsiLS/tu-repo-juego" target="_blank">Código</a></p>
-        </section>
-        <section>
-          <h3>CRM JANNET</h3>
-          <p>Backend en Laravel + MySQL.</p>
-          <p><a href="https://github.com/noYsiLS/tu-repo-crm" target="_blank">Repositorio</a></p>
-        </section>
-      </section>
-
-      <!-- Sección en Markdown -->
-      <section data-markdown>
-        <textarea data-template>
-### Habilidades
-- **Java** (POO, colecciones)
-- **Laravel / PHP**
-- **SQL** (PostgreSQL, SQL Server)
-- **Angular / JS**
-
-> Siempre feliz de colaborar.
-        </textarea>
-      </section>
-
-      <!-- Contacto -->
-      <section>
-        <h2>Contacto</h2>
-        <p><a href="mailto:tu@email.com">tu@email.com</a></p>
-        <p><a href="https://github.com/noYsiLS" target="_blank">github.com/noYsiLS</a></p>
       </section>
 
     </div>
   </div>
 
-  <!-- Scripts de reveal.js (CDN) -->
+  <!-- Scripts de Reveal.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
   <script>
     Reveal.initialize({
-      hash: true,            // cada slide con URL única
-      slideNumber: true,     // muestra número de slide
-      transition: 'fade',    // 'slide' | 'fade' | 'convex' | 'concave' | 'zoom'
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      hash: true,
+      transition: 'fade'
     });
   </script>
 </body>
