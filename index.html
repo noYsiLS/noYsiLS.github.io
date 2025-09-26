@@ -9,56 +9,105 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
 
   <style>
-    .brand { font-size: 64px; letter-spacing: 1px; margin-bottom: .3em; }
-    .subtitle { font-size: 28px; margin-top: .5em; margin-bottom: 1.2em; }
-    /* fila de tarjetas con imágenes-enlace */
+    /* ---- Tipografías y layout ---- */
+    .reveal h1, .reveal h2, .reveal h3 { text-transform: none; } /* quita MAYÚSCULAS automáticas */
+    .brand {
+      font-size: clamp(36px, 6vw, 72px);
+      letter-spacing: .5px;
+      margin: 0 0 .25em 0;
+      line-height: 1.1;
+    }
+    .subtitle {
+      font-size: clamp(18px, 2.5vw, 28px);
+      margin: .2em 0 0.8em 0;
+      opacity: .95;
+    }
+    /* Centramos toda la slide de forma elegante */
+    .centered-slide {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 100vh;           /* centra verticalmente en toda la pantalla */
+      padding-top: 6vh;            /* levanta un poco el contenido respecto al borde superior */
+      gap: 12px;
+    }
+
+    /* Bloques con título arriba y contenido abajo */
+    .block { width: min(1024px, 92vw); margin-top: 10px; }
+    .block h3 {
+      margin: 0 0 10px 0;
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 700;
+      color: #e6e6e6;
+      text-align: center;
+    }
+
+    /* Fila de tarjetas con imágenes-enlace */
     .link-cards {
-      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap;
-      margin-top: 12px;
+      display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;
     }
     .link-card {
       display: inline-flex; flex-direction: column; align-items: center;
       text-decoration: none;
     }
     .link-card img {
-      width: 160px; height: 160px; object-fit: cover;
+      width: 150px; height: 150px; object-fit: cover;
       border-radius: 16px; border: 1px solid #333;
       transition: transform .15s ease, box-shadow .15s ease;
       box-shadow: 0 6px 18px rgba(0,0,0,.35);
     }
     .link-card:hover img { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.45); }
     .link-card span { margin-top: 8px; font-weight: 600; color: #ddd; }
+
+    /* Ajustes responsive pequeños */
+    @media (max-width: 480px) {
+      .link-card img { width: 128px; height: 128px; }
+    }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- ÚNICA SLIDE -->
-      <section data-background-color="#111">
-        <h1 class="brand">Luis Fernando Herrera Medina HUB</h1>
-        <p class="subtitle">bienvenidos a mi pagina Personal</p>
+      <!-- SLIDE ÚNICA -->
+      <section data-background-color="#111" class="centered-slide">
+        <h1 class="brand">luis fernando (noyse) hub</h1>
+        <p class="subtitle">bienvenidos a mi página personal</p>
 
-        <!-- Enlace de texto a tu GitHub (si quieres conservarlo) -->
+        <!-- (opcional) enlace simple -->
         <p><a href="https://github.com/noYsiLS" target="_blank" rel="noopener">Visita mi GitHub</a></p>
 
-        <!-- NUEVA FILA CON DOS IMÁGENES-ENLACE -->
-        <div class="link-cards">
-          <!-- YouTube -->
-          <a class="link-card"
-             href="https://www.youtube.com/@TU_CANAL" target="_blank" rel="noopener"
-             aria-label="Ir a mi canal de YouTube">
-            <img src="img/mapachito.jpg" alt="Canal de YouTube">
-            <span>YouTube</span>
-          </a>
+        <!-- BLOQUE: YouTube -->
+        <div class="block">
+          <h3>YouTube</h3>
+          <div class="link-cards">
+            <a class="link-card"
+               href="https://www.youtube.com/@tryingtolearnjava" target="_blank" rel="noopener"
+               aria-label="Ir a mi canal de YouTube">
+              <img src="img/mapachito.jpg" alt="Canal de YouTube">
+              <span>Canal</span>
+            </a>
+          </div>
+        </div>
 
-          <!-- Repo específico -->
-          <a class="link-card"
-             href="https://github.com/noYsiLS/TU-REPO-ESPECIFICO" target="_blank" rel="noopener"
-             aria-label="Ir a mi repositorio">
-            <img src="img/github.png" alt="Repositorio en GitHub">
-            <span>Repo destacado</span>
-          </a>
+        <!-- BLOQUE: Repositorios -->
+        <div class="block">
+          <h3>Repositorios</h3>
+          <div class="link-cards">
+            <!-- Todos los repos -->
+            <a class="link-card"
+               href="https://github.com/noYsiLS?tab=repositories" target="_blank" rel="noopener"
+               aria-label="Ir a todos mis repositorios">
+              <img src="img/github.png" alt="Todos mis repositorios">
+              <span>Todos mis repos</span>
+            </a>
+
+            <!-- Repo específico (cambia la URL) -->
+            <a class="link-card"
+               href="https://github.com/noYsiLS/TU-REPO-ESPECIFICO" target="_blank" rel="noopener"
+               aria-label="Ir a mi repositorio destacado">
+              <img src="img/github.png" alt="Repositorio destacado">
+              <span>Repo destacado</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -71,4 +120,3 @@
   </script>
 </body>
 </html>
-
