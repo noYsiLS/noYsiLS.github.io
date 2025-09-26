@@ -35,14 +35,14 @@
       text-align: center;
     }
     .link-cards {
-      display: flex; gap: 18px; justify-content: center; flex-wrap: wrap;
+      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap;
     }
     .link-card {
       display: inline-flex; flex-direction: column; align-items: center;
       text-decoration: none;
     }
     .link-card img {
-      width: 140px; height: 140px; object-fit: cover;
+      width: 130px; height: 130px; object-fit: cover;
       border-radius: 16px; border: 1px solid #333;
       transition: transform .15s ease, box-shadow .15s ease;
       box-shadow: 0 6px 18px rgba(0,0,0,.35);
@@ -59,29 +59,25 @@
         <h1 class="brand">luis fernando (noyse) hub</h1>
         <p class="subtitle">bienvenidos a mi página personal</p>
 
-        <p><a href="https://github.com/noYsiLS" target="_blank" rel="noopener">Visita mi GitHub</a></p>
-
-        <!-- Bloque YouTube -->
+        <!-- Fila con YouTube y Repositorios -->
         <div class="block">
-          <h3>YouTube</h3>
+          <h3>Mis enlaces</h3>
           <div class="link-cards">
+            <!-- YouTube -->
             <a class="link-card"
                href="https://www.youtube.com/@tryingtolearnjava" target="_blank" rel="noopener">
               <img src="img/mapachito.jpg" alt="Canal de YouTube">
-              <span>Canal</span>
+              <span>YouTube</span>
             </a>
-          </div>
-        </div>
 
-        <!-- Bloque Repositorios -->
-        <div class="block">
-          <h3>Repositorios</h3>
-          <div class="link-cards">
+            <!-- Repo 1 -->
             <a class="link-card"
                href="https://github.com/noYsiLS?tab=repositories" target="_blank" rel="noopener">
               <img src="img/github.png" alt="Todos mis repositorios">
               <span>Todos mis repos</span>
             </a>
+
+            <!-- Repo 2 -->
             <a class="link-card"
                href="https://github.com/noYsiLS/TU-REPO-ESPECIFICO" target="_blank" rel="noopener">
               <img src="img/github.png" alt="Repositorio destacado">
