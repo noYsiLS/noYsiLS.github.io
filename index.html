@@ -5,38 +5,70 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Presentación</title>
 
-  <!-- Estilos de Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
 
   <style>
     .brand { font-size: 64px; letter-spacing: 1px; margin-bottom: .3em; }
-    .subtitle { font-size: 28px; margin-top: .5em; }
+    .subtitle { font-size: 28px; margin-top: .5em; margin-bottom: 1.2em; }
+    /* fila de tarjetas con imágenes-enlace */
+    .link-cards {
+      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .link-card {
+      display: inline-flex; flex-direction: column; align-items: center;
+      text-decoration: none;
+    }
+    .link-card img {
+      width: 160px; height: 160px; object-fit: cover;
+      border-radius: 16px; border: 1px solid #333;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+    }
+    .link-card:hover img { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.45); }
+    .link-card span { margin-top: 8px; font-weight: 600; color: #ddd; }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Presentación única -->
+      <!-- ÚNICA SLIDE -->
       <section data-background-color="#111">
         <h1 class="brand">noYsiLS</h1>
         <p class="subtitle">Bienvenido a mi página en GitHub Pages 🚀</p>
-        <p>
-          <a href="https://github.com/noYsiLS" target="_blank">Visita mi GitHub</a>
-        </p>
+
+        <!-- Enlace de texto a tu GitHub (si quieres conservarlo) -->
+        <p><a href="https://github.com/noYsiLS" target="_blank" rel="noopener">Visita mi GitHub</a></p>
+
+        <!-- NUEVA FILA CON DOS IMÁGENES-ENLACE -->
+        <div class="link-cards">
+          <!-- YouTube -->
+          <a class="link-card"
+             href="https://www.youtube.com/@TU_CANAL" target="_blank" rel="noopener"
+             aria-label="Ir a mi canal de YouTube">
+            <img src="img/youtube.png" alt="Canal de YouTube">
+            <span>YouTube</span>
+          </a>
+
+          <!-- Repo específico -->
+          <a class="link-card"
+             href="https://github.com/noYsiLS/TU-REPO-ESPECIFICO" target="_blank" rel="noopener"
+             aria-label="Ir a mi repositorio">
+            <img src="img/github.png" alt="Repositorio en GitHub">
+            <span>Repo destacado</span>
+          </a>
+        </div>
       </section>
 
     </div>
   </div>
 
-  <!-- Scripts de Reveal.js -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
   <script>
-    Reveal.initialize({
-      hash: true,
-      transition: 'fade'
-    });
+    Reveal.initialize({ hash: true, transition: 'fade' });
   </script>
 </body>
 </html>
+
