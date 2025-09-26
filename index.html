@@ -5,86 +5,149 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Presentación</title>
 
+  <!-- Reveal base -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme">
+  <!-- Fuente (opcional, aspecto más pro) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    .reveal h1, .reveal h2, .reveal h3 { text-transform: none; }
-    .brand {
-      font-size: clamp(36px, 6vw, 64px);
-      margin: 0 0 .2em 0;
-      line-height: 1.1;
+    :root{
+      --accent:#4cc9f0;            /* color de acento */
+      --card-bg:rgba(255,255,255,.06);
+      --card-brd:rgba(255,255,255,.12);
+      --shadow:0 8px 28px rgba(0,0,0,.35);
     }
-    .subtitle {
-      font-size: clamp(18px, 2.5vw, 26px);
-      margin: .3em 0 .8em 0;
-      opacity: .95;
+
+    /* ===== Tipografía / reset Reveal ===== */
+    .reveal, .reveal * { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+    .reveal h1, .reveal h2, .reveal h3 { text-transform:none; letter-spacing:.3px; }
+    .reveal a { color: var(--accent); }
+    .reveal small { opacity:.8; }
+
+    /* ===== Hero / layout ===== */
+    section[data-background-color]{
+      /* degradado sutil en el fondo */
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(76,201,240,.12), transparent 60%),
+        radial-gradient(1200px 800px at 90% 90%, rgba(168,85,247,.12), transparent 60%),
+        #111 !important;
     }
-    .centered-slide {
-      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-      min-height: 100vh;
-      padding-top: 6vh;
-      gap: 16px;
+
+    .brand{
+      font-weight: 800;
+      font-size: clamp(36px, 6.2vw, 72px);
+      line-height: 1.05;
+      margin: 0 0 .1em 0;
     }
-    .block { width: min(1024px, 92vw); margin-top: 12px; }
-    .block h3 {
-      margin: 0 0 12px 0;
-      font-size: clamp(18px, 2.2vw, 26px);
-      font-weight: 700;
-      color: #e6e6e6;
-      text-align: center;
+    .subtitle{
+      font-size: clamp(16px, 2.2vw, 24px);
+      margin: .2em 0 1.2em 0;
+      color: #e7e7e7;
+      opacity:.92;
     }
-    .link-cards {
-      display: flex; gap: 22px; justify-content: center; flex-wrap: wrap;
+
+    /* Centramos y subimos el contenido */
+    .centered-slide{
+      display:flex; flex-direction:column; align-items:center;
+      min-height:100vh; padding-top:5vh; gap:20px;
     }
-    .link-card {
-      display: inline-flex; flex-direction: column; align-items: center;
-      text-decoration: none;
+
+    /* ===== Bloques con título ===== */
+    .block{ width:min(1020px,92vw); }
+    .block h3{
+      margin:0 0 14px 0; text-align:center;
+      font-size: clamp(18px, 2.1vw, 24px);
+      font-weight: 700; color:#f3f3f3;
     }
-    .link-card img {
-      width: 130px; height: 130px; object-fit: cover;
-      border-radius: 16px; border: 1px solid #333;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+
+    /* ===== Cards (imágenes con enlace) ===== */
+    .link-cards{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(140px, 1fr));
+      gap:22px;
+      justify-items:center;
     }
-    .link-card:hover img { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.45); }
-    .link-card span { margin-top: 6px; font-weight: 600; color: #ddd; }
+    @media (max-width:720px){
+      .link-cards{ grid-template-columns: repeat(3, 1fr); gap:16px; }
+    }
+    @media (max-width:520px){
+      .link-cards{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .link-card{
+      width: 180px;
+      max-width: 42vw;
+      display:flex; flex-direction:column; align-items:center; gap:10px;
+      text-decoration:none; padding:14px 14px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-brd);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .link-card:focus-visible{ outline:2px solid var(--accent); outline-offset:4px; }
+    .link-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.45);
+      border-color: rgba(76,201,240,.45);
+    }
+    .link-card img{
+      width: 120px; height:120px; object-fit:cover;
+      border-radius:14px; border:1px solid var(--card-brd);
+      box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    }
+    .link-card span{
+      font-weight:600; color:#eaeaea; letter-spacing:.2px;
+    }
+
+    /* Prefiere menos animación */
+    @media (prefers-reduced-motion: reduce){
+      .link-card, .link-card img { transition:none !important; }
+    }
   </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
+      <!-- Slide única -->
       <section data-background-color="#111" class="centered-slide">
         <h1 class="brand">luis fernando (noyse) hub</h1>
         <p class="subtitle">bienvenidos a mi página personal</p>
 
-        <!-- Fila con YouTube y Repositorios -->
         <div class="block">
           <h3>Mis enlaces</h3>
           <div class="link-cards">
             <!-- YouTube -->
             <a class="link-card"
-               href="https://www.youtube.com/@tryingtolearnjava" target="_blank" rel="noopener">
+               href="https://www.youtube.com/@tryingtolearnjava" target="_blank" rel="noopener"
+               aria-label="Canal de YouTube">
               <img src="img/mapachito.jpg" alt="Canal de YouTube">
               <span>YouTube</span>
             </a>
 
-            <!-- Repo 1 -->
+            <!-- Todos los repos -->
             <a class="link-card"
-               href="https://github.com/noYsiLS?tab=repositories" target="_blank" rel="noopener">
+               href="https://github.com/noYsiLS?tab=repositories" target="_blank" rel="noopener"
+               aria-label="Todos mis repositorios en GitHub">
               <img src="img/github.png" alt="Todos mis repositorios">
               <span>Todos mis repos</span>
             </a>
 
-            <!-- Repo 2 -->
+            <!-- Repo específico -->
             <a class="link-card"
-               href="https://github.com/noYsiLS/javaEjercicios" target="_blank" rel="noopener">
+               href="https://github.com/noYsiLS/javaEjercicios" target="_blank" rel="noopener"
+               aria-label="Repositorio destacado: javaEjercicios">
               <img src="img/github.png" alt="Repositorio destacado">
               <span>Repo destacado</span>
             </a>
           </div>
         </div>
+
+        <small>© 2025 noYsiLS</small>
       </section>
 
     </div>
@@ -92,7 +155,11 @@
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
   <script>
-    Reveal.initialize({ hash: true, transition: 'fade' });
+    Reveal.initialize({
+      hash:true,
+      transition:'fade',
+      slideNumber:false
+    });
   </script>
 </body>
 </html>
